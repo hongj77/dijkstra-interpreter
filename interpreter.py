@@ -2,12 +2,10 @@
 operand = []
 operator = []
 
-
 while True:
-
 	print "Enter a an arithmetic expression with full parentheses."
 	prompt = '>>>>>> '
-	answer = raw_input(prompt);
+	answer = raw_input(prompt).replace(' ', '');
 
 	for c in answer:
 		if c == '(': pass
@@ -25,9 +23,11 @@ while True:
 			operand.append(result)
 		else:
 			#variable c is an operand here
+			print c
 			operand.append(float(c))
 
-	print '\n' + operand.pop()
+	print '\n' + str(operand.pop())
+
 	print "\nAnother? (y/n)"
 	another = raw_input(prompt);
 	if another == 'n':
